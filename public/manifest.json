@@ -1,0 +1,17 @@
+{
+  "short_name": "NCERT DNA AI",
+  "name": "NCERT DNA AI — High-Yield NEET OS",
+  "description": "Master high-yield NCERT biology statements and NEET preparation with live active-recall diagnostics, instant screenshot OCR scans, and comprehensive performance analytics.",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#0f172a",
+  "theme_color": "#6366f1",
+  "display": "standalone",
+  "orientation": "portrait"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "NCERT DNA AI",
+  "description": "A premium learning operating system where students instantly discover the exact NCERT Biology lines that maximize their NEET rank. Track mock scores, practice past year questions, generate predictive MCQs, retrieve AI explanations, and schedule smart revisions.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

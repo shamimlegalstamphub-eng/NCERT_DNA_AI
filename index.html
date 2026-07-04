@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Primary SEO Meta Tags -->
+    <title>NCERT DNA AI — High-Yield NEET OS</title>
+    <meta name="description" content="Unlock NCERT Biology master coordinates with NCERT DNA AI. A robust NEET preparation operating system featuring high-yield active-recall drills, screenshot OCR scanning, and personalized performance diagnostics." />
+    <meta name="keywords" content="NEET, NCERT, Biology, NEET OS, NCERT DNA, Active Recall, NEET Preparation, OCR Scanner, High Yield Drills, Diagnostics" />
+    <meta name="author" content="NCERT DNA AI" />
+    
+    <!-- Robots and Indexing -->
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    
+    <!-- Canonical URL Link -->
+    <link rel="canonical" id="canonical-link" href="https://ais-pre-zmrjpa5r6wmc2xforjzzs7-928988966339.asia-east1.run.app/" />
+    
+    <!-- Favicon and Theme Branding -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#6366f1" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ais-pre-zmrjpa5r6wmc2xforjzzs7-928988966339.asia-east1.run.app/" />
+    <meta property="og:title" content="NCERT DNA AI — High-Yield NEET OS" />
+    <meta property="og:description" content="Unlock NCERT Biology master coordinates with NCERT DNA AI. High-yield NEET OS with active-recall drills, screenshot OCR, and diagnostic analytics." />
+    <meta property="og:image" content="https://ais-pre-zmrjpa5r6wmc2xforjzzs7-928988966339.asia-east1.run.app/favicon.svg" />
+    <meta property="og:site_name" content="NCERT DNA AI" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://ais-pre-zmrjpa5r6wmc2xforjzzs7-928988966339.asia-east1.run.app/" />
+    <meta property="twitter:title" content="NCERT DNA AI — High-Yield NEET OS" />
+    <meta property="twitter:description" content="Unlock NCERT Biology master coordinates with NCERT DNA AI. High-yield NEET OS with active-recall drills, screenshot OCR, and diagnostic analytics." />
+    <meta property="twitter:image" content="https://ais-pre-zmrjpa5r6wmc2xforjzzs7-928988966339.asia-east1.run.app/favicon.svg" />
+  </head>
+  <body>
+    <div id="error-fallback" style="display: none; position: fixed; inset: 0; background: maroon; color: white; padding: 24px; font-family: monospace; z-index: 999999; overflow: auto;"></div>
+    <script>
+      function reportDiagnostics(data) {
+        fetch("/api/diagnostics/log", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data)
+        }).catch(err => console.warn("Diagnostic sync failed", err));
+      }
+
+      window.addEventListener("error", (event) => {
+        const errorContainer = document.getElementById("error-fallback");
+        if (errorContainer) {
+          errorContainer.style.display = "block";
+          errorContainer.innerHTML = `
+            <h2 style="margin-top: 0;">⚠️ BOOTSTRAP RUNTIME CRASH</h2>
+            <p><strong>Message:</strong> ${event.message}</p>
+            <p><strong>File:</strong> ${event.filename}:${event.lineno}:${event.colno}</p>
+            <pre style="background: rgba(0,0,0,0.4); padding: 12px; overflow-x: auto;">${event.error ? event.error.stack : 'No stack trace available'}</pre>
+          `;
+        }
+        reportDiagnostics({
+          type: "error",
+          message: event.message,
+          filename: event.filename,
+          lineno: event.lineno,
+          colno: event.colno,
+          stack: event.error ? event.error.stack : 'No stack'
+        });
+      });
+
+      window.addEventListener("unhandledrejection", (event) => {
+        const reasonStr = event.reason ? (event.reason.message || String(event.reason)) : "Unknown rejection";
+        if (reasonStr.toLowerCase().includes("websocket") || reasonStr.toLowerCase().includes("vite")) {
+          // Gracefully suppress expected WebSocket errors resulting from HMR being disabled
+          event.preventDefault();
+          return;
+        }
+        reportDiagnostics({
+          type: "unhandledrejection",
+          message: reasonStr,
+          stack: event.reason && event.reason.stack ? event.reason.stack : "No stack"
+        });
+      });
+
+      // Intercept console.error
+      const originalConsoleError = console.error;
+      console.error = function(...args) {
+        const msg = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : String(arg)).join(" ");
+        if (msg.toLowerCase().includes("websocket") || msg.toLowerCase().includes("failed to connect") || msg.includes("[vite]")) {
+          // Quietly ignore benign websocket failure logging
+          return;
+        }
+        originalConsoleError.apply(console, args);
+        reportDiagnostics({
+          type: "console_error",
+          message: msg
+        });
+      };
+
+      console.log("Telemetry script loaded");
+    </script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
